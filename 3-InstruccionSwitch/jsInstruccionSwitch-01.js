@@ -6,7 +6,7 @@ function mostrar()
 	mes = document.getElementById("txtIdMes").value;
 
 	
-	switch (mes) {
+	switch ( mes) {
 		case "Enero":
 			alert("que comiense bien el año");
 			break;
