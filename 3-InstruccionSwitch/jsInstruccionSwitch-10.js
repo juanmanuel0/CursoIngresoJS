@@ -16,7 +16,7 @@ function mostrar()
 		  }else{viaje = no;}
 		  break;
 	  case "Verano":
-		  if (destino == "Mar del plata" || "Cataras") {
+		  if (destino == "Mar del plata" || destino == "Cataras") {
 			viaje = si;
 		  }else{ viaje = no; }
 		  break;
