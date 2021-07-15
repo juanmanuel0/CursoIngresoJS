@@ -1,45 +1,36 @@
 function mostrar()
 {
-	let destinos;
-	let estacion;
-	let si;
-	let no;
+  let estacion;
+  let destino;
+  let si = "Se viaja"
+  let no = "No se viaja"  
+  let viaje;
 
-	
-	 
-    destinos = document.getElementById("txtIdDestino").value;
-	estacion = document.getElementById("txtIdEstacino").value;
+  estacion = document.getElementById("txtIdEstacion").value;
+  destino = document.getElementById("txtIdDestino").value;
 
-	switch (estacion) {
-		case "Invierno":
-			if (destino == "Bariloche") {
-				alert("puto")
-			}else{no;}
+  switch (estacion) {
+	  case "Invierno":
+		  if (destino == "Bariloche") {
+			viaje =  si;
+		  }else{viaje = no;}
+		  break;
+	  case "Verano":
+		  if (destino == "Mar del plata" || "Cataras") {
+			viaje = si;
+		  }else{ viaje = no; }
+		  break;
+	  case "Otoño":
+		viaje = si;
 			break;
-	    case "Verano":
-			if (destino == "Mar del plata" || "Cataras") {
-				si;
-			}else{ no; }
-			break;
-		case "Otoño":
-			if (destino == "Bariloche") {
-				
-			}
-			break;
-		case "Primavera":
-			if (destino == "Bariloche") {
-				no;
-			}else{si;}
-			break;	
-	}
-	if (si) {
-		alert("se viaja");
-	} else if (no) {
-		alert("no se viaja");
-	}{
+	  case "Primavera":
+		  if (destino == "Bariloche") {
+			viaje = no;
+		  }else{ viaje =si;}
+		  break;	
+  }
+  alert(viaje);
 		
-	}
-	
 	
 
 }//FIN DE LA FUNCIÓN
