@@ -25,19 +25,19 @@ function CalcularPrecio ()
     switch (cantidad) {
        case 5:
     if (marca == "Argentinaluz") {
-        preciofinal = cantidad * precio * 0.40;
-        }else {preciofinal = cantidad * precio * 0.30}
+        preciofinal = cantidad * precio * 0.60;
+        }else {preciofinal = cantidad * precio  * 0.70}
               break; 
         case 4:
         if (marca == "ArgentinaLuz" || marca =="FelipeLamparas") {
-            preciofinal = cantidad * precio * 0.25;
+            preciofinal = cantidad * precio * 0.75;
             
-        } else { preciofinal = cantidad * precio * 0.20;}
+        } else { preciofinal = cantidad * precio  * 0.80;}
              break;
         case 3:
-        if (marca =="ArgentinaLuz"){preciofinal = cantidad * precio  * 0.15;
-        }else if (marca =="FelipeLamparas") {preciofinal = cantidad * precio  * 0.10;}
-         else {preciofinal = cantidad * precio  * 0.5}
+        if (marca =="ArgentinaLuz"){preciofinal = cantidad * precio   * 0.85;
+        }else if (marca =="FelipeLamparas") {preciofinal = cantidad * precio   * 0.90;}
+         else {preciofinal = cantidad * precio  * 0.95}
              break;  
         case 1:
             preciofinal = precio;
