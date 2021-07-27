@@ -1,8 +1,8 @@
 function mostrar()
 {
 
-	for (let  par= 0; par <= 20 ; par ++) {
-		if (par % 2){
+	for (let  i= 0; i <= 20 ; i ++) {
+		if (i % 2){
 			continue;
 		}
 		alert(par)

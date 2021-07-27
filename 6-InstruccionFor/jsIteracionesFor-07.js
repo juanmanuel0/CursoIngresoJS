@@ -9,7 +9,7 @@ function mostrar()
 		
 	}
 	for (let  i= 0; i <= numero ; i ++) {
-		if (i % numero){
+		if (numero % i){
 			continue;
 		}
 		console.log(i)
