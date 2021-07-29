@@ -1,6 +1,5 @@
 function mostrar()
 {
-	
 	let primos = 0;
 	let numero;
 	numero = parseInt(prompt("ingrese un numero"));
@@ -9,20 +8,20 @@ function mostrar()
 		
 	}
 	for (let  i= 1; i <= numero ; i ++) {
-		if (numero % i){
-			continue;
+		if (numero % i == 0){
+			primos++;
 		}
-		console.log(i)
-		primos++
+			
 
 		
-	}if (primos == 0) {
-		console.log("es primo")
-		
-	} else {
-		console.log("no es primo")
-		
 	}
+	if (primos == 2) {
+		console.log(numero + " es primo");
+		
+	}else{console.log(numero + " no es primo");}
+ 
+
+	
 	
 
 		
