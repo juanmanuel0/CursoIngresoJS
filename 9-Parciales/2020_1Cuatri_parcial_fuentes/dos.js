@@ -1,6 +1,96 @@
+/*Realizar el algoritmo que permita ingresar los datos de una compra productos de la construccion, hasta que el cliente quiera:
+Tipo validad("arena";"cal";"cemento")
+Cantidad de bolsas,
+Precio por bolsa (más de cero ),
+
+Si compro más de 10 bolsas en total tenes 15% de descuento sobre el total a pagar.
+Si compro más de 30 bolsas en total tenes 25% de descuento sobre el total a pagar.
+a) El importe total a pagar , bruto sin descuento y...
+b) el importe total a pagar con descuento(solo si corresponde)
+c) Informar el tipo con mas cantidad de bolsas.
+d) El tipo mas caro */
+
 function mostrar()
 {
-  let tipo;
+ let tipo;
+ let cantidad;
+ let precio;
+ // punto A
+ let importeTotal = 0;
+ // punto B
+ let cantidadBolsas = 0;
+ let importeTotalDescuento = 0;
+ // punto C
+ let maxCantidadBolsas;
+ let acumArena = 0;
+ let acumCal = 0;
+ let acumCemento = 0;
+ // punto D
+ let flag = 1;
+ let MasCaro;
+ let tipoCaro;
+////////////////
+let respuesta;
+ do {
+  tipo = prompt("ingrese un tipo de bolsa (arena/cal/cemento)");
+  while (!(isNaN(tipo))) {
+    tipo = prompt("Error. ingrese un tipo de bolsa (arena/cal/cemento)");
+  }
+  cantidad = parseInt(prompt("ingrese la cantidad de  bolsas"));
+  while (isNaN(cantidad)) {
+    cantidad = parseInt(prompt("Error. ingrese la cantidad de bolsas"));
+  }
+  precio = parseInt(prompt("ingrese un precio"));
+  while (!(precio > 0)) {
+    precio = parseInt(prompt("Error. ingrese un precio"));
+  }
+  importeTotal += precio;
+  cantidadBolsas += cantidad
+
+  if (tipo == "arena") {
+    acumArena += cantidad;
+  }else if (tipo == "cal") {
+    acumCal += cantidad;
+  }else{
+    acumCemento += cantidad;
+  }
+  if (flag || precio > MasCaro) {
+   MasCaro = precio;
+   tipoCaro = tipo;
+  }
+ 
+  respuesta = prompt("quiere ingresar otra compra (si/no)");
+ } while (respuesta == "si");
+ if (cantidadBolsas > 30) {
+   importeTotalDescuento = importeTotal * 0.75;
+ }else if (cantidadBolsas > 10) {
+  importeTotalDescuento = importeTotal * 0.85;
+ }
+
+if (acumArena > acumCal && acumArena > acumCemento) {
+  maxCantidadBolsas = "arena";
+}else if (acumCal >= acumArena && acumCal > acumCemento) {
+  maxCantidadBolsas = "cal";
+}else{
+  maxCantidadBolsas = "cemento";
+}
+
+document.write("a- importe total sin descuento " + importeTotal + "<br>");
+document.write("b- importe total con descuento " + importeTotalDescuento + "<br>");
+document.write("c- mayor cantidad de bolsas " + maxCantidadBolsas + "<br>");
+document.write("d- la bolsa mas cara es " + tipoCaro + " precio " + MasCaro + "<br>");
+/*a) El importe total a pagar , bruto sin descuento y...
+b) el importe total a pagar con descuento(solo si corresponde)
+c) Informar el tipo con mas cantidad de bolsas.
+d) El tipo mas caro */
+
+
+
+
+ 
+}
+/*
+ let tipo;
   let cantidad;
   let precio;
   let seguir;
@@ -80,59 +170,6 @@ function mostrar()
     document.write("c) tipo con mas cantidad de bolsas " + tipoMaxBolsas + " con " +
     cantBolsas + " bolsas<br>")
     document.write("d) el tipo mas caro " + mayortipo + " precio " + mayorPrecio + "<br>" );
-
-
- 
-}
-/*
-Estrategia de soluciom
-1- declarar de variables
-cosas que le pediomos al usuario -> tipo / cantidad / precio / seguir
-cosas que no tengo que pedir al usuario -> descuento / importeBruto / importeNeto / acumBolsas /
-mayorPrecio / mayoTipo / acumuladorBA / acumuladorBC / acumuladorBCal / maxBolsas / tipoMasBolsas
-cantBolsas / 
-
-2- genero un blucke mientras el usuario quiera(do-while)
-
-3- cosas que se repiten por cada producto comprado
-
-3.1 pido y valido el tipo
-3.2 pido y valido la cantidad (+0)
-3.3 pido y valido precio (+0)
-
-3.4 acumular la cantidad de bolsas 
-3.5 acumular el importe bruto
-
-3.6 me fijo el tipo  de producto y acumulo la cantidad de bolsa segun el tipo
-
-3.7 para el primer procuto gaurdo tipo y precio (es mi unico procucto por ende es el mas caro)
-para los sifuientes productos voy a comparar sus precio con el producto caro y si es mas caro
-actualizo el precio y producto 
--------------------------------------------------------------------------------------------
-
-despues del bulke 
-me fijo que descuento corresponde (de acuerdo al acumulador de bolsas)
-calculo el descuento
-
-calculo es importe neto 
-
-me fijo cual es mayo acumulador de bolsas para informar el tipo de producto que se compraron
-mas bolsas 
-
-mostras los resultados s
--------------------------------------------------------------------------------------------
-Realizar el algoritmo que permita ingresar los datos de una compra productos de la construccion, hasta que el cliente quiera:
-Tipo validad("arena";"cal";"cemento")
-Cantidad de bolsas,
-Precio por bolsa (más de cero ),
-
-Si compro más de 10 bolsas en total tenes 15% de descuento sobre el total a pagar.
-Si compro más de 30 bolsas en total tenes 25% de descuento sobre el total a pagar.
-a) El importe total a pagar , bruto sin descuento y...
-b) el importe total a pagar con descuento(solo si corresponde)
-d) Informar el tipo con mas cantidad de bolsas.
-f) El tipo mas caro
----------------------------------------------------------
 
 
 */
